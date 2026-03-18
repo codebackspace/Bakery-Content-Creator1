@@ -15,7 +15,7 @@ export const products: Product[] = [
     name: 'Croissant',
     description: 'Buttery, flaky French croissants baked fresh every morning with premium European butter.',
     price: 120,
-    image: 'https://images.pexels.com/photos/1549799/pexels-photo-1549799.jpeg',
+    image: 'https://images.pexels.com/photos/2135/food-france-morning-breakfast.jpg',
     category: 'pastry',
     bestseller: true,
   },
