@@ -31,8 +31,8 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/">
           <div className="flex items-center gap-2 cursor-pointer">
-            <Croissant className="h-7 w-7 text-amber-700" />
-            <span className="text-xl font-bold font-serif text-amber-900">ARK BAKEHOUSE</span>
+            <Croissant className={`h-7 w-7 ${isScrolled ? 'text-amber-700' : 'text-white'}`} />
+            <span className={`text-xl font-bold font-serif ${isScrolled ? 'text-amber-900' : 'text-white'}`}>ARK BAKEHOUSE</span>
           </div>
         </Link>
 
