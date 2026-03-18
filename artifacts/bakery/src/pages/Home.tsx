@@ -33,7 +33,7 @@ const Home: React.FC = () => {
       <section
         className="relative h-screen bg-center bg-cover"
         style={{
-          backgroundImage: 'url(https://images.pexels.com/photos/1070946/pexels-photo-1070946.jpeg)',
+          backgroundImage: 'url(https://images.pexels.com/photos/1855214/pexels-photo-1855214.jpeg)',
         }}
       >
         <div className="absolute inset-0 bg-black/60"></div>
