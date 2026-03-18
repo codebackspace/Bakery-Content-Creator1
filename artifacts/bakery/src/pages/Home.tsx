@@ -137,7 +137,7 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-amber-300 font-semibold uppercase tracking-widest text-sm mb-3">Why Sweet Crumbs?</p>
+              <p className="text-amber-300 font-semibold uppercase tracking-widest text-sm mb-3">Why ARK BAKEHOUSE?</p>
               <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
                 Baked with Tradition, Served with Love
               </h2>

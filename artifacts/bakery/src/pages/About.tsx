@@ -53,7 +53,7 @@ const About: React.FC = () => {
                 From Grandmother's Kitchen to Your Table
               </h2>
               <p className="text-gray-600 mb-4 leading-relaxed">
-                Sweet Crumbs was born in a small Dhaka kitchen where our founder, Nadia Rahman, learned to bake sourdough alongside her grandmother. What started as weekend loaves for family quickly grew into a full bakery after neighbors couldn't stop asking where to buy the bread.
+                ARK BAKEHOUSE was born in a small Dhaka kitchen where our founder, Nadia Rahman, learned to bake sourdough alongside her grandmother. What started as weekend loaves for family quickly grew into a full bakery after neighbors couldn't stop asking where to buy the bread.
               </p>
               <p className="text-gray-600 mb-6 leading-relaxed">
                 Today, we operate from our beautiful flagship bakery on Baker Street, with a team of 12 passionate bakers who share our obsession with quality. Every recipe we use has been tested hundreds of times to achieve that perfect balance of flavor, texture, and freshness.

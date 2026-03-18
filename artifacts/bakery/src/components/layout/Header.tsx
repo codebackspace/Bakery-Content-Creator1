@@ -32,7 +32,7 @@ const Header: React.FC = () => {
         <Link href="/">
           <div className="flex items-center gap-2 cursor-pointer">
             <Croissant className="h-7 w-7 text-amber-700" />
-            <span className="text-xl font-bold font-serif text-amber-900">Sweet Crumbs</span>
+            <span className="text-xl font-bold font-serif text-amber-900">ARK BAKEHOUSE</span>
           </div>
         </Link>
 

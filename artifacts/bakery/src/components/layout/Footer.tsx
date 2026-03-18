@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Croissant className="h-6 w-6 text-amber-400" />
-              <span className="text-xl font-bold font-serif text-white">Sweet Crumbs</span>
+              <span className="text-xl font-bold font-serif text-white">ARK BAKEHOUSE</span>
             </div>
             <p className="text-amber-300 text-sm leading-relaxed">
               Baking happiness since 2010. Every loaf, every cake, every cookie is made with love and the finest ingredients.
@@ -70,7 +70,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-amber-800 pt-6 text-center text-amber-400 text-sm">
-          <p>&copy; {new Date().getFullYear()} Sweet Crumbs Bakery. All rights reserved. Baked with love.</p>
+          <p>&copy; {new Date().getFullYear()} ARK BAKEHOUSE. All rights reserved. Baked with love.</p>
         </div>
       </div>
     </footer>
