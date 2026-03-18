@@ -102,6 +102,15 @@ export const products: Product[] = [
     image: 'https://images.pexels.com/photos/3892469/pexels-photo-3892469.jpeg',
     category: 'pastry',
   },
+  {
+    id: 13,
+    name: 'The Ark Signature Swirls',
+    description: 'Buttery, slow-risen dough layered with aromatic Ceylon cinnamon and a hint of crushed cardamom. Baked golden and topped with Swedish pearl sugar for a delightful crunch. Ask for it "Warm" for a gooey, melt-in-your-mouth center.',
+    price: 450,
+    image: '/swirls.png',
+    category: 'pastry',
+    bestseller: true,
+  },
 ];
 
 export const paymentMethods: PaymentMethod[] = [
