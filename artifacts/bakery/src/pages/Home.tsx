@@ -64,7 +64,7 @@ const Home: React.FC = () => {
         </div>
 
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-6">
-          {[['100+', 'Recipes'], ['15', 'Years'], ['2K+', 'Happy Customers']].map(([num, label]) => (
+          {[['100+', 'Recipes'], ['2K+', 'Happy Customers']].map(([num, label]) => (
             <div key={label} className="text-center text-white">
               <p className="text-2xl font-bold text-amber-300">{num}</p>
               <p className="text-xs text-amber-100">{label}</p>
