@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-amber-950 text-amber-100">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr_1.5fr] gap-8 mb-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Croissant className="h-6 w-6 text-amber-400 shrink-0" />
