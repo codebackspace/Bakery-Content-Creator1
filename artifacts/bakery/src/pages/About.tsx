@@ -38,7 +38,7 @@ const About: React.FC = () => {
         <div className="relative container mx-auto px-4 text-center text-white">
           <h1 className="text-4xl md:text-5xl font-serif font-bold mb-3">Our Story</h1>
           <p className="text-amber-200 text-lg max-w-xl mx-auto">
-            A family tradition, a passion for baking, and over 15 years of happy customers.
+            A family tradition, a passion for baking, and thousands of happy customers.
           </p>
         </div>
       </section>
@@ -48,7 +48,7 @@ const About: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-amber-600 font-semibold uppercase tracking-wider text-sm mb-3">Est. 2010</p>
+              <p className="text-amber-600 font-semibold uppercase tracking-wider text-sm mb-3">Est. 2026</p>
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-amber-900 mb-5">
                 From Grandmother's Kitchen to Your Table
               </h2>

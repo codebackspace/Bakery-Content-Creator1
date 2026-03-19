@@ -9,11 +9,11 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Croissant className="h-6 w-6 text-amber-400" />
-              <span className="text-xl font-bold font-serif text-white">ARK BAKEHOUSE</span>
+              <Croissant className="h-6 w-6 text-amber-400 shrink-0" />
+              <span className="text-xl font-bold font-serif text-white whitespace-nowrap">ARK BAKEHOUSE</span>
             </div>
             <p className="text-amber-300 text-sm leading-relaxed">
-              Baking happiness since 2010. Every loaf, every cake, every cookie is made with love and the finest ingredients.
+              Every loaf, every cake, every cookie is made with love and the finest ingredients.
             </p>
           </div>
 
