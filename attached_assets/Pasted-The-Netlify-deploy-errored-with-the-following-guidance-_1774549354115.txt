@@ -1,0 +1,87 @@
+The Netlify deploy errored, with the following guidance provided:
+
+Diagnosis
+- Relevant log lines show Netlify runs "pnpm install && pnpm run build:netlify" and that pnpm reports a missing script "build:netlify" ([line 79](#L79), [line 90](#L90), [line 86](#L86)). The resolved config also shows Netlify expects to publish /opt/build/repo/dist ([line 98](#L98)).
+- Error type and cause: Build failed because the root workspace does not have an npm script named "build:netlify". Netlify's build.command runs pnpm run build:netlify but that script is not defined in the repository, so pnpm exits with ERR_PNPM_NO_SCRIPT ([line 79](#L79)).
+
+Solution
+1) Verify the script is missing
+- Open the repo root package.json and confirm whether a "build:netlify" script exists:
+  https://github.com/codebackspace/Bakery-Content-Creator1/blob/master/package.json
+  If it is missing, that explains the failure.
+
+2) Fix options (pick one)
+
+Option A — Add a root "build:netlify" script that runs the actual package build
+- Add a script to the root package.json that invokes the workspace package which builds the site. Example (replace <your-app> with the workspace package name or path that contains the app):
+
+```json
+{
+  "scripts": {
+    "build:netlify": "pnpm --filter <your-app> run build"
+  }
+}
+```
+
+- Commit that change and re-deploy. This leaves Netlify's build.command unchanged.
+
+How to find <your-app>
+- Look for the app's package.json under subfolders (for example frontend, site, apps/*). You can inspect pnpm-workspace.yaml or list package.json files in the repo to locate the package that has a "build" script.
+
+Option B — Change Netlify build command to run an existing script directly
+- If you prefer not to modify package.json, edit netlify.toml or Netlify UI Build settings to run the workspace build command directly. Example (replace <your-app>):
+
+netlify.toml (snippet)
+```toml
+[build]
+  command = "pnpm --filter <your-app> run build"
+  publish = "path/to/<your-app>/dist"
+```
+
+- Ensure the publish directory points to the actual build output of the package (the current config shows publish = /opt/build/repo/dist which is probably incorrect for a monorepo) — update publish to the app's build output folder.
+
+3) Verify and redeploy
+- Commit changes (either package.json or netlify.toml) and push. Trigger a new Netlify deploy.
+- If you still see failures, re-check the build logs for new errors.
+
+Notes
+- Because this repository is a pnpm workspace (logs show "Scope: all 9 workspace projects"), the root must either expose a script that orchestrates the workspace build or Netlify must run the correct workspace package build command. Make sure the package you reference is present in package.json/pnpm-workspace.yaml and committed before changing external config.
+
+The relevant error logs are:
+
+Line 72: [36m$ pnpm install && pnpm run build:netlify[39m
+Line 73: Scope: all 9 workspace projects
+Line 74: Lockfile is up to date, resolution step is skipped
+Line 75: Already up to date
+Line 76: [36m.[39m [96mpreinstall[39m$ sh -c 'rm -f package-lock.json yarn.lock; case "$npm_config_user_agent" in pnpm/*) ;; *) echo 
+Line 77: [36m.[39m [96mpreinstall[39m: Done
+Line 78: Done in 1.3s using pnpm v10.30.3
+Line 79: [41m[30m ERR_PNPM_NO_SCRIPT [39m[49m [31mMissing script: build:netlify[39m
+Line 80: Command "build:netlify" not found.
+Line 81: [91m[1m​[22m[39m
+Line 82: [91m[1m"build.command" failed                                        [22m[39m
+Line 83: [91m[1m────────────────────────────────────────────────────────────────[22m[39m
+Line 84: ​
+Line 85:   [31m[1mError message[22m[39m
+Line 86:   Command failed with exit code 1: pnpm install && pnpm run build:netlify
+Line 87: ​
+Line 88:   [31m[1mError location[22m[39m
+Line 89:   In build.command from netlify.toml:
+Line 90:   pnpm install && pnpm run build:netlify
+Line 91: ​
+Line 92:   [31m[1mResolved config[22m[39m
+Line 93:   build:
+Line 94:     command: pnpm install && pnpm run build:netlify
+Line 95:     commandOrigin: config
+Line 96:     environment:
+Line 97:       - NODE_VERSION
+Line 98:     publish: /opt/build/repo/dist
+Line 99:     publishOrigin: config
+Line 100:   redirects:
+Line 101:     - from: /*
+      status: 200
+      to: /index.html
+  redirectsOrigin: config
+Line 102: Build failed due to a user error: Build script returned non-zero exit code: 2
+Line 103: Failing build: Failed to build site
+Line 104: Finished processing build request in 17.385s
