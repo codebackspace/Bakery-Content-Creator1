@@ -1,5 +1,5 @@
 [build]
-  command = "npm install -g pnpm && pnpm install && pnpm --filter @workspace/bakery run build:netlify"
+  command = "pnpm install && pnpm --filter @workspace/bakery run build:netlify"
   publish = "artifacts/bakery/dist"
 
 [build.environment]
