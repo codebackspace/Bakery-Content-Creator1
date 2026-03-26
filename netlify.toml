@@ -1,0 +1,9 @@
+[build]
+  base = "artifacts/bakery"
+  command = "npm install && npm run build:netlify"
+  publish = "artifacts/bakery/dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
